@@ -99,3 +99,44 @@ a[href*="gpteng.co"][class*="badge"] {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* Premium pill buttons */
+@utility btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.95rem 1.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    transform 300ms cubic-bezier(.22, 1, .36, 1),
+    box-shadow 300ms cubic-bezier(.22, 1, .36, 1),
+    background-color 300ms ease,
+    border-color 300ms ease,
+    color 300ms ease;
+  will-change: transform, box-shadow;
+  white-space: nowrap;
+  &:hover { transform: translateY(-2px); }
+  &:active { transform: translateY(0) scale(0.98); transition-duration: 120ms; }
+  &:focus-visible { outline: 2px solid var(--brand-red); outline-offset: 3px; }
+}
+@utility btn-pill--primary {
+  background: linear-gradient(135deg, var(--brand-red) 0%, #ef3b3b 100%);
+  color: #fff;
+  box-shadow: var(--shadow-pill);
+  &:hover { box-shadow: 0 18px 40px -12px color-mix(in oklab, var(--brand-red) 65%, transparent); }
+}
+@utility btn-pill--ghost {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.75);
+  box-shadow: var(--shadow-pill-ghost);
+  &:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
+}
