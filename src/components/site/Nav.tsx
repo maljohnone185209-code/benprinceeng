@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import bpLogo from "@/assets/bp-logo.png";
+import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+const bpLogo = bpLogoAsset.url;
 
 const links = [
   { label: "Home", href: "#home" },
