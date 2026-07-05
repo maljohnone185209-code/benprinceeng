@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -8,11 +9,10 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen bg-[color:var(--brand-navy-deep)] text-white">
+    <main className="min-h-screen bg-white text-[color:var(--brand-navy-deep)]">
       <Nav />
       <Hero />
-      {/* Spacer so scroll-triggered nav state is testable */}
-      <div className="h-[120vh]" aria-hidden />
+      <About />
     </main>
   );
 }
