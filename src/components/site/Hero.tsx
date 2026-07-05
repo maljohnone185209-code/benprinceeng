@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight, BadgeCheck, HardHat, ShieldCheck, Sparkles } from "lucide-react";
-import bpLogo from "@/assets/bp-logo.png";
+import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+const bpLogo = bpLogoAsset.url;
 import heroAsset from "@/assets/bp-hero.jpg.asset.json";
 
 const trust = [
