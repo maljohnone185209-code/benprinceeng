@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { z } from "zod";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import office from "@/assets/bp-office.jpg.asset.json";
+import { WHATSAPP_URL, WHATSAPP_DISPLAY } from "@/lib/expertise-data";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
