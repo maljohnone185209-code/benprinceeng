@@ -63,6 +63,11 @@ export function Contact() {
               <InfoRow icon={Phone} title="Phone">
                 <a href="tel:+2348063691299" className="hover:text-[color:var(--brand-red)]">08063691299</a>
               </InfoRow>
+              <InfoRow icon={MessageCircle} title="WhatsApp">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[color:var(--brand-red)]">
+                  WhatsApp: {WHATSAPP_DISPLAY}
+                </a>
+              </InfoRow>
               <InfoRow icon={Mail} title="Email">
                 <a href="mailto:benprinceengineeringservices@gmail.com" className="break-all hover:text-[color:var(--brand-red)]">
                   benprinceengineeringservices@gmail.com
