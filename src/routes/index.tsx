@@ -6,6 +6,7 @@ import { Services } from "@/components/site/Services";
 import { Expertise } from "@/components/site/Expertise";
 import { WhyChooseUs } from "@/components/site/WhyChooseUs";
 import { Careers } from "@/components/site/Careers";
+import { WhatsAppConnect } from "@/components/site/WhatsAppConnect";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 
@@ -23,6 +24,7 @@ function Index() {
       <Expertise />
       <WhyChooseUs />
       <Careers />
+      <WhatsAppConnect />
       <Contact />
       <Footer />
     </main>
