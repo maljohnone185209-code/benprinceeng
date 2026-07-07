@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Facebook, Instagram, MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail, ArrowUp, MessageCircle } from "lucide-react";
 import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+import { WHATSAPP_URL, WHATSAPP_DISPLAY } from "@/lib/expertise-data";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
