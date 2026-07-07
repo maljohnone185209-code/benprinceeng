@@ -117,6 +117,12 @@ export function Footer() {
                 <Phone size={18} className="shrink-0 text-[color:var(--brand-red)]" />
                 <a href="tel:+2348063691299" className="hover:text-white">08063691299</a>
               </li>
+              <li className="flex items-center gap-3">
+                <MessageCircle size={18} className="shrink-0 text-[color:var(--brand-red)]" />
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  WhatsApp: {WHATSAPP_DISPLAY}
+                </a>
+              </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="mt-0.5 shrink-0 text-[color:var(--brand-red)]" />
                 <a href="mailto:benprinceengineeringservices@gmail.com" className="break-all hover:text-white">
