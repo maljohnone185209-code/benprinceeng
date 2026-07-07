@@ -88,7 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Engineering excellence across Nigeria — building construction, civil, fabrication, oil & gas and project management.",
+          "Ben-Prince Engineering Construction Ltd delivers building, civil, fabrication, oil & gas, facility maintenance and project management with quality, precision and integrity across Nigeria.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
