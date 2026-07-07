@@ -1,28 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, PhoneCall } from "lucide-react";
-
-const pills = [
-  "Residential Construction",
-  "Commercial Buildings",
-  "Industrial Facilities",
-  "Civil Engineering",
-  "Road Construction",
-  "Drainage Systems",
-  "Infrastructure Development",
-  "Structural Steel Works",
-  "Oil & Gas Facilities",
-  "Fabrication",
-  "Facility Maintenance",
-  "Surveying",
-  "Geotechnical Investigation",
-  "Marine Surveys",
-  "Architectural Design",
-  "Project Management",
-  "Procurement",
-  "Solar Energy Solutions",
-  "Swimming Pool Construction",
-  "Transport & Logistics",
-];
+import { expertiseItems, WHATSAPP_URL } from "@/lib/expertise-data";
 
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
@@ -60,18 +39,20 @@ export function Expertise() {
           </div>
 
           <div ref={ref} className="mt-14 flex flex-wrap justify-center gap-3 sm:gap-3.5">
-            {pills.map((p, i) => (
-              <span
-                key={p}
-                className="cursor-default rounded-full bg-[color:var(--brand-navy-deep)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_25px_-14px_rgba(6,24,58,0.6)] transition-all duration-500 hover:-translate-y-1 hover:bg-[color:var(--brand-red)] hover:shadow-[0_18px_35px_-14px_rgba(214,40,40,0.6)]"
+            {expertiseItems.map((p, i) => (
+              <Link
+                key={p.slug}
+                to="/expertise/$slug"
+                params={{ slug: p.slug }}
+                className="rounded-full bg-[color:var(--brand-navy-deep)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_25px_-14px_rgba(6,24,58,0.6)] transition-all duration-500 hover:-translate-y-1 hover:bg-[color:var(--brand-red)] hover:shadow-[0_18px_35px_-14px_rgba(214,40,40,0.6)]"
                 style={{
                   opacity: inView ? 1 : 0,
                   transform: inView ? "translateY(0)" : "translateY(14px)",
                   transitionDelay: inView ? `${i * 40}ms` : "0ms",
                 }}
               >
-                {p}
-              </span>
+                {p.title}
+              </Link>
             ))}
           </div>
         </div>
@@ -103,7 +84,7 @@ export function Expertise() {
             quality, innovation and professionalism.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <a href="#contact" className="btn-pill btn-pill--primary group">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-pill btn-pill--primary group">
               Request a Quote
               <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
