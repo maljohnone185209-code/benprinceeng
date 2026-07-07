@@ -64,6 +64,7 @@ export function Footer() {
                 { icon: Facebook, href: "https://facebook.com/", label: "Facebook" },
                 { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
                 { icon: TikTokIcon, href: "https://tiktok.com/", label: "TikTok" },
+                { icon: MessageCircle, href: WHATSAPP_URL, label: "WhatsApp" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
