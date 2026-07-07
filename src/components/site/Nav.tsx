@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+import { WHATSAPP_URL } from "@/lib/expertise-data";
 const bpLogo = bpLogoAsset.url;
 
 const links = [
@@ -61,7 +62,7 @@ export function Nav() {
         </ul>
 
         <div className="hidden lg:block">
-          <a href="#quote" className="btn-pill btn-pill--primary">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-pill btn-pill--primary">
             Get a Quote
           </a>
         </div>
@@ -95,7 +96,7 @@ export function Nav() {
             </li>
           ))}
           <li className="pt-2">
-            <a href="#quote" onClick={() => setOpen(false)} className="btn-pill btn-pill--primary w-full justify-center">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn-pill btn-pill--primary w-full justify-center">
               Get a Quote
             </a>
           </li>

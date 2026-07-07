@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight, BadgeCheck, HardHat, ShieldCheck, Sparkles } from "lucide-react";
 import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+import { WHATSAPP_URL } from "@/lib/expertise-data";
 const bpLogo = bpLogoAsset.url;
 import heroAsset from "@/assets/bp-hero.jpg.asset.json";
 
@@ -114,7 +115,9 @@ export function Hero() {
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <a
-              href="#quote"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-pill btn-pill--primary animate-[fadeUp_600ms_ease-out_900ms_both]"
             >
               Request a Quote
