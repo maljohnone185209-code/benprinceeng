@@ -82,7 +82,7 @@ export function Careers() {
               Ready To Build Your Career?
             </h3>
           </div>
-          <a href="#contact" className="btn-pill btn-pill--primary group">
+          <a href="https://wa.me/2348063691299" target="_blank" rel="noopener noreferrer" className="btn-pill btn-pill--primary group">
             Apply Today
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </a>

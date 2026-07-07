@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Facebook, Instagram, MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail, ArrowUp, MessageCircle } from "lucide-react";
 import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+import { WHATSAPP_URL, WHATSAPP_DISPLAY } from "@/lib/expertise-data";
 
 const quickLinks = [
   { label: "Home", href: "#home" },
@@ -63,6 +64,7 @@ export function Footer() {
                 { icon: Facebook, href: "https://facebook.com/", label: "Facebook" },
                 { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
                 { icon: TikTokIcon, href: "https://tiktok.com/", label: "TikTok" },
+                { icon: MessageCircle, href: WHATSAPP_URL, label: "WhatsApp" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -114,6 +116,12 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Phone size={18} className="shrink-0 text-[color:var(--brand-red)]" />
                 <a href="tel:+2348063691299" className="hover:text-white">08063691299</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MessageCircle size={18} className="shrink-0 text-[color:var(--brand-red)]" />
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  WhatsApp: {WHATSAPP_DISPLAY}
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="mt-0.5 shrink-0 text-[color:var(--brand-red)]" />
