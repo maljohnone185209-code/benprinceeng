@@ -1,19 +1,19 @@
-import residential from "@/assets/expertise/residential-construction.webp.asset.json";
-import commercial from "@/assets/expertise/commercial-buildings.webp.asset.json";
-import industrial from "@/assets/expertise/industrial-facilities.jpg.asset.json";
-import civil from "@/assets/expertise/civil-engineering.png.asset.json";
-import road from "@/assets/expertise/road-construction.jpg.asset.json";
-import drainage from "@/assets/expertise/drainage-systems.jpg.asset.json";
-import infra from "@/assets/expertise/infrastructure-development.jpg.asset.json";
-import steel from "@/assets/expertise/structural-steel-works.jpg.asset.json";
-import fabrication from "@/assets/expertise/fabrication.jpg.asset.json";
-import facility from "@/assets/expertise/facility-maintenance.jpg.asset.json";
-import surveying from "@/assets/expertise/surveying.jpg.asset.json";
-import geo from "@/assets/expertise/geotechnical-investigation.jpg.asset.json";
-import architectural from "@/assets/expertise/architectural-design.jpg.asset.json";
-import pm from "@/assets/expertise/project-management.png.asset.json";
-import solar from "@/assets/expertise/solar-energy-solutions.jpg.asset.json";
-import pool from "@/assets/expertise/swimming-pool-construction.jpg.asset.json";
+const residential = { url: "/images/expertise/residential-construction.webp" };
+const commercial = { url: "/images/expertise/commercial-buildings.webp" };
+const industrial = { url: "/images/expertise/industrial-facilities.jpg" };
+const civil = { url: "/images/expertise/civil-engineering.png" };
+const road = { url: "/images/expertise/road-construction.jpg" };
+const drainage = { url: "/images/expertise/drainage-systems.jpg" };
+const infra = { url: "/images/expertise/infrastructure-development.jpg" };
+const steel = { url: "/images/expertise/structural-steel-works.jpg" };
+const fabrication = { url: "/images/expertise/fabrication.jpg" };
+const facility = { url: "/images/expertise/facility-maintenance.jpg" };
+const surveying = { url: "/images/expertise/surveying.jpg" };
+const geo = { url: "/images/expertise/geotechnical-investigation.jpg" };
+const architectural = { url: "/images/expertise/architectural-design.jpg" };
+const pm = { url: "/images/expertise/project-management.png" };
+const solar = { url: "/images/expertise/solar-energy-solutions.jpg" };
+const pool = { url: "/images/expertise/swimming-pool-construction.jpg" };
 
 export type Expertise = {
   slug: string;
