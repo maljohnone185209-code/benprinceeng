@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+const bpLogoAsset = { url: "/images/bp-logo.png" };
 
 const SESSION_KEY = "bp_preloader_shown";
 

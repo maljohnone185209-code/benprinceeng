@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { GraduationCap, Sprout, Briefcase, FileSignature, ArrowRight } from "lucide-react";
-import careers from "@/assets/bp-careers.jpg.asset.json";
+const careers = { url: "/images/bp-careers.jpg" };
 
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);

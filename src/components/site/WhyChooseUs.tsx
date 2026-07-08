@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Users, Cog, BadgeCheck, ShieldCheck, Clock, HeartHandshake, ArrowRight } from "lucide-react";
-import team from "@/assets/bp-why-team.jpg.asset.json";
-import equip from "@/assets/bp-why-equip.jpg.asset.json";
+const team = { url: "/images/bp-why-team.jpg" };
+const equip = { url: "/images/bp-why-equip.jpg" };
 
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);

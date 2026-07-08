@@ -10,8 +10,8 @@ import {
   Smile,
   CheckCircle2,
 } from "lucide-react";
-import about1Asset from "@/assets/bp-about-1.jpg.asset.json";
-import about2Asset from "@/assets/bp-about-2.jpg.asset.json";
+const about1Asset = { url: "/images/bp-about-1.jpg" };
+const about2Asset = { url: "/images/bp-about-2.jpg" };
 
 const coreValues = [
   { icon: ShieldCheck, title: "Integrity", desc: "Honest, transparent, and accountable in every engagement we deliver." },

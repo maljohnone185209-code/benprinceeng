@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
-import office from "@/assets/bp-office.jpg.asset.json";
+const office = { url: "/images/bp-office.jpg" };
 import { WHATSAPP_URL, WHATSAPP_DISPLAY } from "@/lib/expertise-data";
 
 const schema = z.object({
