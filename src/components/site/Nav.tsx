@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+const bpLogoAsset = { url: "/images/bp-logo.png" };
 import { WHATSAPP_URL } from "@/lib/expertise-data";
 const bpLogo = bpLogoAsset.url;
 

@@ -14,9 +14,9 @@ import {
   ShieldCheck,
   Cpu,
 } from "lucide-react";
-import svcEngAsset from "@/assets/bp-svc-engineering.jpg.asset.json";
-import svcBuildAsset from "@/assets/bp-svc-building.jpg.asset.json";
-import svcCivilAsset from "@/assets/bp-svc-civil.jpg.asset.json";
+const svcEngAsset = { url: "/images/bp-svc-engineering.jpg" };
+const svcBuildAsset = { url: "/images/bp-svc-building.jpg" };
+const svcCivilAsset = { url: "/images/bp-svc-civil.jpg" };
 
 function useInView<T extends HTMLElement>(threshold = 0.15) {
   const ref = useRef<T | null>(null);

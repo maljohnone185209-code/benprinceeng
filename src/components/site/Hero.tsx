@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight, BadgeCheck, HardHat, ShieldCheck, Sparkles } from "lucide-react";
-import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
+const bpLogoAsset = { url: "/images/bp-logo.png" };
 import { WHATSAPP_URL } from "@/lib/expertise-data";
 const bpLogo = bpLogoAsset.url;
-import heroAsset from "@/assets/bp-hero.jpg.asset.json";
+const heroAsset = { url: "/images/bp-hero.jpg" };
 
 const trust = [
   { icon: BadgeCheck, label: "Registered Company" },
