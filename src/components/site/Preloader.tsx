@@ -4,20 +4,30 @@ import bpLogoAsset from "@/assets/bp-logo.png.asset.json";
 const SESSION_KEY = "bp_preloader_shown";
 
 export function Preloader() {
-  const [visible, setVisible] = useState(false);
+  // Start visible so the very first paint covers the homepage.
+  // SSR and initial client render match (both true) — no hydration mismatch,
+  // no flash of homepage content before the overlay mounts.
+  const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    // If already shown this session, hide immediately (no flash — overlay
+    // was covering during the brief hydration window).
     try {
-      if (sessionStorage.getItem(SESSION_KEY)) return;
+      if (sessionStorage.getItem(SESSION_KEY)) {
+        setVisible(false);
+        return;
+      }
       sessionStorage.setItem(SESSION_KEY, "1");
     } catch {
       /* ignore */
     }
-    setVisible(true);
+
     document.body.style.overflow = "hidden";
-    const fadeT = window.setTimeout(() => setFading(true), 1900);
+    // Hold for 2s, then fade out over ~600ms.
+    const fadeT = window.setTimeout(() => setFading(true), 2000);
     const hideT = window.setTimeout(() => {
       setVisible(false);
       document.body.style.overflow = "";
@@ -34,7 +44,7 @@ export function Preloader() {
   return (
     <div
       aria-hidden
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B2D5C] transition-opacity duration-700 ease-out"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B2D5C] transition-opacity duration-[600ms] ease-out"
       style={{ opacity: fading ? 0 : 1 }}
     >
       <img
