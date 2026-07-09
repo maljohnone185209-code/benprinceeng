@@ -143,13 +143,22 @@ export function Contact() {
                 </Field>
               </div>
 
-              <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-xs text-slate-500">We respect your privacy — your details are never shared.</p>
-                <button type="submit" className="btn-pill btn-pill--primary group">
+              <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
+                <button type="submit" className="btn-pill btn-pill--primary group justify-center">
                   Request Consultation
                   <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-pill--ghost justify-center"
+                >
+                  <MessageCircle size={16} />
+                  Chat on WhatsApp
+                </a>
               </div>
+              <p className="mt-3 text-xs text-slate-500">We respect your privacy — your details are never shared.</p>
 
               {status === "success" && (
                 <div className="mt-5 rounded-2xl bg-[color:var(--brand-navy-deep)]/5 px-4 py-3 text-sm text-[color:var(--brand-navy-deep)]">
