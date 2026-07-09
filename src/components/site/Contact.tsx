@@ -19,8 +19,9 @@ export function Contact() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const data = Object.fromEntries(fd.entries());
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries()) as Record<string, string>;
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
       const errs: Record<string, string> = {};
@@ -30,8 +31,30 @@ export function Contact() {
       return;
     }
     setErrors({});
+    const v = parsed.data;
+    const message = [
+      "Hello Ben-Prince Engineering Construction Ltd,",
+      "",
+      "I would like to make an enquiry.",
+      "",
+      `Full Name:\n${v.name}`,
+      "",
+      `Phone Number:\n${v.phone || "—"}`,
+      "",
+      `Email:\n${v.email}`,
+      "",
+      `Company:\n${v.company || "—"}`,
+      "",
+      `Service Required:\n${v.projectType || "—"}`,
+      "",
+      `Message:\n${v.message}`,
+      "",
+      "Please contact me regarding my project.",
+    ].join("\n");
+    const url = `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     setStatus("success");
-    e.currentTarget.reset();
+    form.reset();
   };
 
   const inputCls =
@@ -120,17 +143,26 @@ export function Contact() {
                 </Field>
               </div>
 
-              <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-xs text-slate-500">We respect your privacy — your details are never shared.</p>
-                <button type="submit" className="btn-pill btn-pill--primary group">
+              <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4">
+                <button type="submit" className="btn-pill btn-pill--primary group justify-center">
                   Request Consultation
                   <Send size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-pill--ghost justify-center"
+                >
+                  <MessageCircle size={16} />
+                  Chat on WhatsApp
+                </a>
               </div>
+              <p className="mt-3 text-xs text-slate-500">We respect your privacy — your details are never shared.</p>
 
               {status === "success" && (
                 <div className="mt-5 rounded-2xl bg-[color:var(--brand-navy-deep)]/5 px-4 py-3 text-sm text-[color:var(--brand-navy-deep)]">
-                  Thank you — we've received your request and will be in touch shortly.
+                  Thank you for contacting Ben-Prince Engineering Construction Ltd. Your enquiry has been prepared in WhatsApp — please send the message to complete your request.
                 </div>
               )}
               {status === "error" && Object.keys(errors).length > 0 && (
