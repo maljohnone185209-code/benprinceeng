@@ -19,8 +19,9 @@ export function Contact() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const data = Object.fromEntries(fd.entries());
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const data = Object.fromEntries(fd.entries()) as Record<string, string>;
     const parsed = schema.safeParse(data);
     if (!parsed.success) {
       const errs: Record<string, string> = {};
@@ -30,8 +31,30 @@ export function Contact() {
       return;
     }
     setErrors({});
+    const v = parsed.data;
+    const message = [
+      "Hello Ben-Prince Engineering Construction Ltd,",
+      "",
+      "I would like to make an enquiry.",
+      "",
+      `Full Name:\n${v.name}`,
+      "",
+      `Phone Number:\n${v.phone || "—"}`,
+      "",
+      `Email:\n${v.email}`,
+      "",
+      `Company:\n${v.company || "—"}`,
+      "",
+      `Service Required:\n${v.projectType || "—"}`,
+      "",
+      `Message:\n${v.message}`,
+      "",
+      "Please contact me regarding my project.",
+    ].join("\n");
+    const url = `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     setStatus("success");
-    e.currentTarget.reset();
+    form.reset();
   };
 
   const inputCls =
