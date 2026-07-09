@@ -153,7 +153,7 @@ export function Contact() {
 
               {status === "success" && (
                 <div className="mt-5 rounded-2xl bg-[color:var(--brand-navy-deep)]/5 px-4 py-3 text-sm text-[color:var(--brand-navy-deep)]">
-                  Thank you — we've received your request and will be in touch shortly.
+                  Thank you for contacting Ben-Prince Engineering Construction Ltd. Your enquiry has been prepared in WhatsApp — please send the message to complete your request.
                 </div>
               )}
               {status === "error" && Object.keys(errors).length > 0 && (
