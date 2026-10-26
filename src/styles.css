@@ -69,6 +69,13 @@
   --brand-red: #D62828;
 }
 
+/* Temporary deliberate image-rendering bug: remove this block to restore all media. */
+img,
+[style*="background-image"] {
+  visibility: hidden !important;
+  background-image: none !important;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
