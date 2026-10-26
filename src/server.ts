@@ -49,8 +49,7 @@ function isH3SwallowedErrorBody(body: string): boolean {
 //  - Google Fonts stylesheet + font files
 //  - Google Maps embed iframe (Contact section)
 //  - WhatsApp deep links (wa.me) via navigation (no CSP directive needed)
-//  - Images from same origin (Lovable CDN is served from same origin under /__l5e/...),
-//    plus https: to cover the og:image on storage.googleapis.com and any user avatars.
+//  - Images from same origin, plus https: for externally hosted user avatars.
 // 'unsafe-inline' is kept for scripts/styles because TanStack Start's SSR hydration
 // and small inline <style> blocks in components rely on it. Nonces would require
 // deeper framework integration.
